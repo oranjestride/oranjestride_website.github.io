@@ -1,0 +1,98 @@
+/* ============================================================
+   OranjeStride — Design Tokens
+   Single source of truth: colors, type, spacing, radius, shadow, z.
+   ============================================================ */
+:root {
+  /* ---- Brand palette ---- */
+  --c-orange: #ff6a00;
+  --c-orange-2: #f47c20;
+  --c-orange-soft: #fff0e3;
+  --c-navy: #1e2d3d;
+  --c-navy-deep: #17314a;
+  --c-ink: #1e1e1e;
+  --c-muted: #657180;
+  --c-paper: #fffdf8;
+  --c-white: #ffffff;
+  --c-success: #256e51;
+
+  /* ---- Derived / functional ---- */
+  --c-orange-ink: #c24f00;          /* AA-safe orange text on light bg */
+  --c-line: #ece6dc;                /* hairline borders on paper */
+  --c-line-strong: #ddd5c8;
+  --c-navy-line: rgba(255, 255, 255, 0.12);
+  --c-navy-muted: #9fb0c2;          /* muted text on navy */
+  --c-surface: #ffffff;
+  --c-surface-2: #fbf6ee;
+
+  /* ---- Brand gradients ---- */
+  --grad-orange: linear-gradient(135deg, var(--c-orange) 0%, var(--c-orange-2) 100%);
+  --grad-navy: linear-gradient(160deg, #1c2c3c 0%, #142838 60%, #0f2233 100%);
+  --grad-hero-glow: radial-gradient(60% 60% at 70% 30%, rgba(255, 106, 0, 0.20) 0%, rgba(255, 106, 0, 0) 70%);
+
+  /* ---- Typography ---- */
+  --font-display: 'Space Grotesk Variable', 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* fluid type scale (mobile -> desktop) */
+  --fs-xs: 0.75rem;     /* 12 */
+  --fs-sm: 0.8125rem;   /* 13 */
+  --fs-base: 1rem;      /* 16 */
+  --fs-md: 1.0625rem;   /* 17 */
+  --fs-lg: clamp(1.125rem, 1.0rem + 0.6vw, 1.375rem);
+  --fs-xl: clamp(1.375rem, 1.15rem + 1.1vw, 1.875rem);
+  --fs-2xl: clamp(1.75rem, 1.3rem + 2.2vw, 2.75rem);
+  --fs-3xl: clamp(2.25rem, 1.6rem + 3.2vw, 3.75rem);
+  --fs-hero: clamp(2.6rem, 1.4rem + 5.6vw, 5.25rem);
+
+  --lh-tight: 1.05;
+  --lh-snug: 1.2;
+  --lh-body: 1.65;
+  --tracking-tight: -0.02em;
+  --tracking-eyebrow: 0.18em;
+
+  /* ---- Spacing (8px grid) ---- */
+  --sp-1: 0.25rem;   /* 4  */
+  --sp-2: 0.5rem;    /* 8  */
+  --sp-3: 0.75rem;   /* 12 */
+  --sp-4: 1rem;      /* 16 */
+  --sp-5: 1.5rem;    /* 24 */
+  --sp-6: 2rem;      /* 32 */
+  --sp-7: 3rem;      /* 48 */
+  --sp-8: 4rem;      /* 64 */
+  --sp-9: 6rem;      /* 96 */
+  --sp-10: 8rem;     /* 128 */
+
+  --section-pad: clamp(3.5rem, 2.5rem + 5vw, 7.5rem);
+  --container: 1200px;
+  --container-wide: 1320px;
+  --gutter: clamp(1.25rem, 0.5rem + 3vw, 3rem);
+
+  /* ---- Radius ---- */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 22px;
+  --r-pill: 999px;
+
+  /* ---- Shadows (soft, layered) ---- */
+  --sh-1: 0 1px 2px rgba(30, 45, 61, 0.06), 0 1px 1px rgba(30, 45, 61, 0.04);
+  --sh-2: 0 4px 12px rgba(30, 45, 61, 0.08), 0 2px 4px rgba(30, 45, 61, 0.05);
+  --sh-3: 0 14px 40px rgba(30, 45, 61, 0.12), 0 4px 12px rgba(30, 45, 61, 0.07);
+  --sh-4: 0 30px 70px rgba(20, 40, 56, 0.18), 0 10px 24px rgba(20, 40, 56, 0.10);
+  --sh-orange: 0 14px 34px rgba(255, 106, 0, 0.32);
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 160ms;
+  --dur: 240ms;
+  --dur-slow: 420ms;
+
+  /* ---- Z-index scale ---- */
+  --z-base: 0;
+  --z-raised: 10;
+  --z-nav: 100;
+  --z-drawer: 200;
+  --z-modal: 1000;
+  --z-toast: 1100;
+}

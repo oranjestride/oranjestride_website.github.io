@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#17314a" />
+
+    <title>OranjeStride — Stride into Decision Intelligence</title>
+    <meta
+      name="description"
+      content="India's premier Gen AI & Data Science training and consulting — turning complex algorithms into competitive advantage for professionals, executives, and institutions."
+    />
+    <meta name="author" content="OranjeStride" />
+    <meta name="robots" content="index, follow" />
+    <!-- TODO: update to the live domain before launch -->
+    <link rel="canonical" href="https://www.oranjestride.com/" />
+
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="180x180" href="/images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="OranjeStride" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:url" content="https://www.oranjestride.com/" />
+    <meta property="og:title" content="OranjeStride — Stride into Decision Intelligence" />
+    <meta property="og:description" content="India's premier Gen AI & Data Science training and consulting practice." />
+    <meta property="og:image" content="https://www.oranjestride.com/images/og_image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="OranjeStride — Stride into Decision Intelligence" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="OranjeStride — Stride into Decision Intelligence" />
+    <meta name="twitter:description" content="India's premier Gen AI & Data Science training and consulting practice." />
+    <meta name="twitter:image" content="https://www.oranjestride.com/images/og_image.jpg" />
+
+    <!-- Organization structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "OranjeStride",
+        "url": "https://www.oranjestride.com/",
+        "email": "content@oranjestride.com",
+        "description": "India's premier Gen AI & Data Science training and consulting practice.",
+        "logo": "https://www.oranjestride.com/images/no_background_logo.webp",
+        "slogan": "From data to decisions. From decisions to outcomes."
+      }
+    </script>
+
+    <!-- Hide reveal elements before first paint ONLY when JS+motion are on.
+         Failsafe: un-hide after 5s if the app never booted (e.g. script error). -->
+    <script>
+      (function () {
+        var h = document.documentElement;
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          h.classList.add('anim-ready');
+          setTimeout(function () {
+            if (!h.classList.contains('booted')) h.classList.remove('anim-ready');
+          }, 5000);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ============ 1 · NAV ============ -->
+    <header class="nav" data-nav>
+      <div class="container container--wide nav__inner">
+        <a class="brand" href="#top" aria-label="OranjeStride home">
+          <img class="brand__mark" src="/images/logo_mark.webp" alt="" width="40" height="40" />
+          <span class="brand__word"><span class="brand__o">Oranje</span><span class="brand__s">Stride</span></span>
+        </a>
+
+        <nav class="nav__links" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#expertise">Expertise</a>
+          <a href="#clients">Clients</a>
+          <a href="#programmes">Programmes</a>
+          <a href="#india-tour">India Tour</a>
+          <a href="#consulting">Consulting</a>
+        </nav>
+
+        <a class="btn btn--primary btn--sm nav__cta" href="#contact">Get In Touch</a>
+
+        <button class="nav__toggle" data-drawer-open aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile drawer -->
+    <div class="drawer" id="drawer" data-drawer hidden>
+      <div class="drawer__backdrop" data-drawer-close></div>
+      <aside class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
+        <button class="drawer__close" data-drawer-close aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+        <nav class="drawer__links" aria-label="Mobile">
+          <a href="#about" data-drawer-close>About</a>
+          <a href="#expertise" data-drawer-close>Expertise</a>
+          <a href="#clients" data-drawer-close>Clients</a>
+          <a href="#programmes" data-drawer-close>Programmes</a>
+          <a href="#india-tour" data-drawer-close>India Tour</a>
+          <a href="#consulting" data-drawer-close>Consulting</a>
+        </nav>
+        <a class="btn btn--primary drawer__cta" href="#contact" data-drawer-close>Get In Touch</a>
+      </aside>
+    </div>
+
+    <main id="main">
+      <span id="top"></span>
+
+      <!-- ============ 2 · HERO ============ -->
+      <section class="hero" id="hero">
+        <div class="hero__bg" aria-hidden="true" data-parallax="0.12"></div>
+        <div class="container container--wide hero__inner">
+          <div class="hero__copy">
+            <p class="eyebrow eyebrow--light" data-reveal>Generative AI · Machine Learning · Analytics</p>
+            <h1 class="hero__title" data-reveal>Stride into<br /><span class="accent">Decision Intelligence</span></h1>
+            <p class="hero__sub" data-reveal>
+              India's premier Gen AI & Data Science training consultancy — turning complex
+              algorithms into competitive advantage for professionals, executives, and institutions.
+            </p>
+            <p class="hero__motto" data-reveal>From data to decisions. From decisions to outcomes.</p>
+            <div class="hero__actions" data-reveal>
+              <a class="btn btn--primary" href="#programmes">Explore Programmes</a>
+              <a class="btn btn--ghost-light" href="#contact">Work With Us</a>
+            </div>
+          </div>
+
+          <div class="hero__visual" data-reveal>
+            <div class="hero__canvas" data-hero-canvas></div>
+            <div class="hero__fallback" data-hero-fallback>
+              <svg class="neural" viewBox="0 0 420 420" aria-hidden="true" focusable="false">
+                <defs>
+                  <radialGradient id="nGlow" cx="50%" cy="45%" r="60%">
+                    <stop offset="0%" stop-color="#ff6a00" stop-opacity="0.35" />
+                    <stop offset="100%" stop-color="#ff6a00" stop-opacity="0" />
+                  </radialGradient>
+                </defs>
+                <rect width="420" height="420" fill="url(#nGlow)" />
+                <g stroke="#ff8a3d" stroke-opacity="0.4" stroke-width="1.2">
+                  <path d="M70 90 200 150M70 90 120 220M200 150 330 110M200 150 250 250M200 150 120 220M330 110 350 240M250 250 350 240M250 250 160 330M120 220 160 330M350 240 300 340M160 330 300 340" />
+                </g>
+                <g fill="#ff6a00">
+                  <circle cx="70" cy="90" r="6" /><circle cx="200" cy="150" r="9" />
+                  <circle cx="330" cy="110" r="6" /><circle cx="120" cy="220" r="7" />
+                  <circle cx="250" cy="250" r="8" /><circle cx="350" cy="240" r="6" />
+                  <circle cx="160" cy="330" r="6" /><circle cx="300" cy="340" r="7" />
+                </g>
+              </svg>
+              <img class="hero__emblem" src="/images/logo_mark.webp" alt="OranjeStride" width="120" height="120" />
+            </div>
+          </div>
+        </div>
+
+        <ul class="hero__metrics container container--wide" role="list" data-reveal>
+          <li class="metric"><span class="metric__value" data-count="1000" data-suffix="+">1000+</span><span class="metric__label">Professionals Trained</span></li>
+          <li class="metric"><span class="metric__value" data-count="4.8" data-decimals="1" data-suffix="/5">4.8/5</span><span class="metric__label">Feedback Score</span></li>
+          <li class="metric"><span class="metric__value" data-count="90" data-suffix="%+">90%+</span><span class="metric__label">Post-Training Adoption</span></li>
+          <li class="metric"><span class="metric__value" data-count="85" data-suffix="%+">85%+</span><span class="metric__label">Cohort Completion</span></li>
+        </ul>
+      </section>
+
+      <!-- ============ 3 · ABOUT ============ -->
+      <section class="section about" id="about">
+        <div class="container about__grid">
+          <div class="about__copy">
+            <p class="eyebrow" data-reveal>About OranjeStride</p>
+            <h2 class="section__title" data-reveal>Nothing Is Unattainable</h2>
+            <p data-reveal>
+              For over <strong>11 years</strong>, OranjeStride has operated at the intersection of
+              academic rigour and industry reality — training the people who turn data into decisions.
+            </p>
+            <p data-reveal>
+              We don't just inform; we <strong>transform</strong>. Our programmes change how teams
+              think, not only what they know — embedding analytical instincts that outlast any single tool.
+            </p>
+            <p data-reveal>
+              Every engagement is engineered for <strong>measurable outcomes</strong>: adoption you can
+              track, skills that ship, and decisions that move the numbers that matter.
+            </p>
+            <a class="btn btn--primary" href="#programmes" data-reveal>View Our Programmes</a>
+          </div>
+
+          <ol class="principles" role="list" data-reveal>
+            <li class="principle">
+              <span class="principle__num">01</span>
+              <div><h3 class="principle__title">Relevance With Industry</h3>
+              <p>Curriculum shaped by what employers actually deploy — not last decade's syllabus.</p></div>
+            </li>
+            <li class="principle">
+              <span class="principle__num">02</span>
+              <div><h3 class="principle__title">Expert Experienced Faculty</h3>
+              <p>Practitioners who have shipped models in production, teaching from the trenches.</p></div>
+            </li>
+            <li class="principle">
+              <span class="principle__num">03</span>
+              <div><h3 class="principle__title">Analytics For All</h3>
+              <p>From first-time learners to senior leaders — pitched precisely to every audience.</p></div>
+            </li>
+            <li class="principle">
+              <span class="principle__num">04</span>
+              <div><h3 class="principle__title">Certified Analytics Professional</h3>
+              <p>Pathways that lead to recognised, portable, career-defining credentials.</p></div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============ 4 · STATS BAND ============ -->
+      <section class="stats" aria-label="Key results">
+        <div class="container stats__grid">
+          <div class="stat" data-reveal><span class="stat__value" data-count="1000" data-suffix="+">1000+</span><span class="stat__label">Professionals &amp; Students Trained</span></div>
+          <div class="stat" data-reveal><span class="stat__value" data-count="4.8" data-decimals="1" data-suffix="/5">4.8/5</span><span class="stat__label">Average Feedback Score</span></div>
+          <div class="stat" data-reveal><span class="stat__value" data-count="90" data-suffix="%+">90%+</span><span class="stat__label">Post-Training Skill Adoption</span></div>
+          <div class="stat" data-reveal><span class="stat__value" data-count="15" data-suffix="+">15+</span><span class="stat__label">Premier Institutional Clients</span></div>
+        </div>
+      </section>
+
+      <!-- ============ 5 · EXPERTISE ============ -->
+      <section class="section expertise" id="expertise">
+        <div class="container">
+          <header class="section__head">
+            <p class="eyebrow" data-reveal>What We Do</p>
+            <h2 class="section__title" data-reveal>Areas of Deep Expertise</h2>
+            <p class="section__intro" data-reveal>Six disciplines, one through-line: translating advanced AI into decisions your organisation can act on.</p>
+          </header>
+          <div class="exp-grid" data-render="expertise"></div>
+        </div>
+      </section>
+
+      <!-- ============ 6 · CLIENTS ============ -->
+      <section class="section clients" id="clients">
+        <div class="container">
+          <header class="section__head">
+            <p class="eyebrow" data-reveal>Our Reach</p>
+            <h2 class="section__title" data-reveal>Trusted By Elite Institutions</h2>
+            <p class="section__intro" data-reveal>From the IIMs to global enterprises and government bodies — leaders choose OranjeStride to build their data capability.</p>
+          </header>
+        </div>
+        <div class="marquee" data-marquee data-render="marquee" aria-label="Client logos"></div>
+        <div class="clients__cta">
+          <button class="btn btn--secondary" data-modal-open="clients">View All Clients</button>
+        </div>
+      </section>
+
+      <!-- ============ 7 · TESTIMONIALS ============ -->
+      <section class="section testimonials" id="testimonials">
+        <div class="container">
+          <header class="section__head">
+            <p class="eyebrow" data-reveal>What Learners Say</p>
+            <h2 class="section__title" data-reveal>Results That Speak</h2>
+          </header>
+          <div class="slider" data-slider>
+            <div class="slider__viewport" data-render="testimonials" aria-live="polite"></div>
+            <div class="slider__controls">
+              <button class="slider__arrow" data-slide-prev aria-label="Previous testimonial">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+              </button>
+              <div class="slider__dots" data-render="testimonial-dots" role="group" aria-label="Choose testimonial"></div>
+              <button class="slider__arrow" data-slide-next aria-label="Next testimonial">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 8 · PROGRAMMES ============ -->
+      <section class="section programmes" id="programmes">
+        <div class="container">
+          <header class="section__head">
+            <p class="eyebrow" data-reveal>Programmes</p>
+            <h2 class="section__title" data-reveal>Our Training Streams</h2>
+            <p class="section__intro" data-reveal>Three routes to capability — each tailored to who is in the room and what they need to ship.</p>
+          </header>
+          <div class="prog-grid" data-render="programmes"></div>
+        </div>
+      </section>
+
+      <!-- ============ 9 · INDIA AI LEARNING TOUR ============ -->
+      <section class="section india" id="india-tour">
+        <div class="container india__grid">
+          <div class="india__copy">
+            <p class="eyebrow" data-reveal>International Programme</p>
+            <h2 class="section__title" data-reveal>India AI Learning Tour</h2>
+            <p data-reveal>
+              An immersive learning journey through India's innovation hubs — world-class curriculum,
+              hands-on labs, and cultural immersion, designed for international cohorts ready to build
+              with AI in one of the world's most dynamic markets.
+            </p>
+            <ul class="india__features" role="list" data-reveal>
+              <li class="india-feat"><img src="/images/research.webp" alt="" width="48" height="48" /><div><h3>World-Class Curriculum</h3><p>Frontier Gen AI & data science, taught by practitioners.</p></div></li>
+              <li class="india-feat"><img src="/images/real_projects.webp" alt="" width="48" height="48" /><div><h3>Hands-On Labs</h3><p>Build on real datasets and ship real projects.</p></div></li>
+              <li class="india-feat"><img src="/images/cultural_immersion.webp" alt="" width="48" height="48" /><div><h3>Cultural Immersion</h3><p>Learn inside India's living innovation ecosystem.</p></div></li>
+              <li class="india-feat"><img src="/images/university_certificate.webp" alt="" width="48" height="48" /><div><h3>Co-Signed Certificate</h3><p>Credential co-signed by OranjeStride and a university of repute in India.</p></div></li>
+            </ul>
+          </div>
+
+          <div class="india__visual" data-reveal>
+            <div class="india__globe" data-globe-canvas></div>
+            <div class="india__globe-fallback" data-globe-fallback>
+              <img src="/images/india_logo.webp" alt="India AI Learning Tour" width="280" height="280" />
+            </div>
+            <div class="india__badge">
+              <img src="/images/university_certificate.webp" alt="" width="40" height="40" />
+              <span>OranjeStride × University of Repute · Co-Signed Certificate</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 10 · CONSULTING ============ -->
+      <section class="section consulting" id="consulting">
+        <div class="container">
+          <header class="section__head">
+            <p class="eyebrow" data-reveal>Consulting Practice</p>
+            <h2 class="section__title" data-reveal>Data &amp; Analytics Consulting</h2>
+            <p class="section__intro" data-reveal>
+              Beyond training, we partner with high-stakes institutions on the data problems where the
+              cost of being wrong is highest.
+            </p>
+          </header>
+          <div class="consult-grid">
+            <article class="consult-card" data-reveal>
+              <img src="/images/financial.webp" alt="" width="56" height="56" />
+              <h3>Quant &amp; Trading Firms</h3>
+              <p>Signal extraction, model validation, and research tooling for teams where milliseconds and basis points matter.</p>
+            </article>
+            <article class="consult-card" data-reveal>
+              <img src="/images/research.webp" alt="" width="56" height="56" />
+              <h3>Sovereign &amp; Institutional Funds</h3>
+              <p>Decision-support and risk analytics for long-horizon capital with a low tolerance for error.</p>
+            </article>
+            <article class="consult-card" data-reveal>
+              <img src="/images/government.webp" alt="" width="56" height="56" />
+              <h3>Government &amp; Research Bodies</h3>
+              <p>Evidence pipelines and policy analytics for public institutions making high-stakes calls at scale.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 11 · CONTACT ============ -->
+      <section class="section contact" id="contact">
+        <div class="container contact__grid">
+          <div class="contact__copy">
+            <p class="eyebrow" data-reveal>Get In Touch</p>
+            <h2 class="section__title" data-reveal>Let's Build Outcomes Together</h2>
+            <p data-reveal>
+              Tell us about your team, your data, and the decisions you're trying to make better.
+              We'll come back with a tailored path forward.
+            </p>
+            <a class="contact__mail" href="mailto:content@oranjestride.com" data-reveal>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              content@oranjestride.com
+            </a>
+          </div>
+
+          <form class="contact__form" data-contact-form novalidate data-reveal>
+            <div class="field">
+              <label for="cf-name">Name <span class="req" aria-hidden="true">*</span></label>
+              <input id="cf-name" name="name" type="text" autocomplete="name" required />
+              <p class="field__error" data-error-for="name" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="cf-email">Email <span class="req" aria-hidden="true">*</span></label>
+              <input id="cf-email" name="email" type="email" autocomplete="email" required />
+              <p class="field__error" data-error-for="email" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="cf-org">Organisation</label>
+              <input id="cf-org" name="organisation" type="text" autocomplete="organization" />
+            </div>
+            <div class="field">
+              <label for="cf-msg">Message <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="cf-msg" name="message" rows="4" required></textarea>
+              <p class="field__error" data-error-for="message" aria-live="polite"></p>
+            </div>
+            <button class="btn btn--primary contact__submit" type="submit">Send Enquiry</button>
+            <p class="contact__success" data-form-success hidden role="status">
+              Thank you — your enquiry is on its way. We'll be in touch shortly.
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ 12 · FOOTER ============ -->
+    <footer class="footer">
+      <div class="container container--wide footer__grid">
+        <div class="footer__brand">
+          <a class="brand" href="#top" aria-label="OranjeStride home">
+            <img class="brand__mark" src="/images/logo_mark.webp" alt="" width="40" height="40" />
+            <span class="brand__word"><span class="brand__o">Oranje</span><span class="brand__s footer__s">Stride</span></span>
+          </a>
+          <p class="footer__blurb">From data to decisions. From decisions to outcomes — India's premier Gen AI & Data Science training and consulting practice.</p>
+        </div>
+
+        <nav class="footer__nav" aria-label="Footer">
+          <h3>Explore</h3>
+          <a href="#about">About</a>
+          <a href="#expertise">Expertise</a>
+          <a href="#clients">Clients</a>
+          <a href="#programmes">Programmes</a>
+          <a href="#india-tour">India Tour</a>
+          <a href="#consulting">Consulting</a>
+        </nav>
+
+        <div class="footer__contact">
+          <h3>Connect</h3>
+          <a href="mailto:content@oranjestride.com">content@oranjestride.com</a>
+          <ul class="footer__social" role="list" aria-label="Social links">
+            <li><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21H17.5v-5.3c0-1.26-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21H9z"/></svg></a></li>
+            <li><a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.2 2H21l-6.6 7.5L22 22h-6.8l-4.3-5.6L5.9 22H3l7-8L2.5 2h6.9l3.9 5.2L18.2 2zm-1.2 18h1.6L7.1 3.7H5.4z"/></svg></a></li>
+            <li><a href="mailto:content@oranjestride.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container container--wide footer__bottom">
+        <p>&copy; <span data-year>2026</span> OranjeStride. All rights reserved.</p>
+        <p>Nothing Is Unattainable.</p>
+      </div>
+    </footer>
+
+    <!-- ============ Clients modal ============ -->
+    <div class="modal" data-modal="clients" hidden>
+      <div class="modal__backdrop" data-modal-close></div>
+      <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="clients-modal-title">
+        <div class="modal__head">
+          <h2 id="clients-modal-title">Our Clients</h2>
+          <button class="modal__close" data-modal-close aria-label="Close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+          </button>
+        </div>
+        <div class="modal__filters" data-render="client-filters" role="tablist" aria-label="Filter clients"></div>
+        <div class="modal__grid" data-render="client-grid"></div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
