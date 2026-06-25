@@ -4,11 +4,15 @@
  */
 import { expertise } from '../data/expertise.js';
 import { clients, clientFilters } from '../data/clients.js';
-import { programmes } from '../data/programmes.js';
+import { programmeStreams } from '../data/programmes.js';
 import { testimonials } from '../data/testimonials.js';
+import { datastride } from '../data/datastride.js';
 
 /* Host-agnostic asset path (respects Vite base). */
 const img = (file) => `${import.meta.env.BASE_URL}images/${file}`;
+
+const escapeHtml = (s) =>
+  String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 /* Inline SVG icon set (stroke = currentColor). */
 const svg = (paths) =>
@@ -23,11 +27,14 @@ const icons = {
   neural: svg('<circle cx="5" cy="7" r="1.8"/><circle cx="5" cy="17" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="7" r="1.8"/><circle cx="19" cy="17" r="1.8"/><path d="M6.6 7.8 10.4 11M6.6 16.2 10.4 13M13.6 11l3.8-3.2M13.6 13l3.8 3.2"/>'),
   building: svg('<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2M10 21v-3h4v3"/>'),
   campus: svg('<path d="m12 4 9 4-9 4-9-4 9-4Z"/><path d="M6 10v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/><path d="M21 8v5"/>'),
-  rocket: svg('<path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M14.5 4.5C18 4 20 6 19.5 9.5 19 13 15 17 11 18l-5-5C7 9 11 5 14.5 4.5Z"/><circle cx="14.5" cy="9.5" r="1.6"/>'),
+  database: svg('<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/>'),
+  bolt: svg('<path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/>'),
+  book: svg('<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/>'),
+  target: svg('<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>'),
   arrow: svg('<path d="M5 12h14M13 6l6 6-6 6"/>'),
+  close: svg('<path d="M6 6l12 12M18 6 6 18"/>'),
+  tick: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg>',
 };
-
-export const arrowIcon = icons.arrow;
 
 function mount(selector, html) {
   const node = document.querySelector(selector);
@@ -67,7 +74,6 @@ function clientTile(c) {
 function renderClients() {
   mount('[data-render="marquee"]', `<div class="marquee__track">${clients.map(clientTile).join('')}</div>`);
 
-  // Modal: filter tabs + grid
   const tabs = clientFilters
     .map(
       (f, i) =>
@@ -89,30 +95,107 @@ function renderClients() {
   mount('[data-render="client-grid"]', grid);
 }
 
-/* ---------- Programme panels ---------- */
+/* ---------- Programmes (tabbed streams) ---------- */
+function courseCard(c) {
+  return `
+    <article class="course-card">
+      ${c.badge ? `<span class="course-badge">${c.badge}</span>` : ''}
+      <h4 class="course-card__title">${c.title}</h4>
+      ${c.desc ? `<p class="course-card__desc">${c.desc}</p>` : ''}
+      ${c.list ? `<ul class="course-card__list" role="list">${c.list.map((i) => `<li><span class="tick" aria-hidden="true">${icons.tick}</span>${i}</li>`).join('')}</ul>` : ''}
+      ${c.tags ? `<ul class="chips" role="list">${c.tags.map((t) => `<li class="chip">${t}</li>`).join('')}</ul>` : ''}
+      ${c.meta ? `<div class="course-meta">${c.meta.map((m) => `<span><strong>${m.v}</strong>${m.k}</span>`).join('')}</div>` : ''}
+      ${c.certificate ? `<p class="course-cert">${c.certificate}</p>` : ''}
+    </article>`;
+}
+
 function renderProgrammes() {
-  const html = programmes
+  const tabs = programmeStreams
     .map(
-      (p) => `
-      <article class="prog-card" data-reveal>
-        <div class="prog-card__head">
-          <span class="prog-card__icon">${icons[p.icon] || ''}</span>
-          <span class="prog-card__num">${p.number}</span>
-        </div>
-        <h3 class="prog-card__title">${p.title}</h3>
-        <p class="prog-card__desc">${p.description}</p>
-        <ul class="prog-card__list" role="list">
-          ${p.highlights
-            .map(
-              (h) =>
-                `<li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4 10-10"/></svg></span>${h}</li>`
-            )
-            .join('')}
-        </ul>
-      </article>`
+      (s, i) =>
+        `<button class="prog-tab${i === 0 ? ' is-active' : ''}" data-prog-tab="${s.id}" role="tab" aria-selected="${i === 0}">${icons[s.icon] || ''}<span>${s.tab}</span></button>`
     )
     .join('');
-  mount('[data-render="programmes"]', html);
+  mount('[data-render="prog-tabs"]', tabs);
+
+  const panels = programmeStreams
+    .map(
+      (s, i) => `
+      <div class="prog-panel${i === 0 ? ' is-active' : ''}" data-prog-panel="${s.id}" role="tabpanel"${i === 0 ? '' : ' hidden'}>
+        <p class="prog-intro">${s.intro}</p>
+        ${s.groups
+          .map(
+            (g) => `
+          ${g.subhead ? `<div class="prog-subhead"><span>${g.subhead}</span></div>` : ''}
+          <div class="course-grid course-grid--${g.layout}">${g.cards.map(courseCard).join('')}</div>`
+          )
+          .join('')}
+      </div>`
+    )
+    .join('');
+  mount('[data-render="prog-panels"]', panels);
+}
+
+/* ---------- DataStride section + popup ---------- */
+function dsFeatures() {
+  return datastride.features
+    .map(
+      (f) => `
+      <div class="ds-feature">
+        <span class="ds-feature__icon">${icons[f.icon] || ''}</span>
+        <h4>${f.title}</h4>
+        <p>${f.desc}</p>
+      </div>`
+    )
+    .join('');
+}
+
+function renderDataStride() {
+  const d = datastride;
+  mount('[data-render="ds-features"]', dsFeatures());
+
+  const KW = /\b(SELECT|FROM|WHERE|GROUP\s+BY|ORDER\s+BY|AS|DESC|ASC|ROUND|SUM|AVG|COUNT|JOIN|ON|AND|OR)\b/g;
+  const hl = (line) => escapeHtml(line).replace(KW, '<span class="ds-kw">$1</span>');
+  const code = d.sample.query.map((line) => `<span class="ds-code__line">${hl(line)}</span>`).join('');
+  const thead = `<tr>${d.sample.columns.map((c) => `<th>${c}</th>`).join('')}</tr>`;
+  const tbody = d.sample.rows.map((r) => `<tr>${r.map((cell) => `<td>${cell}</td>`).join('')}</tr>`).join('');
+  mount(
+    '[data-render="ds-mock"]',
+    `
+    <div class="ds-editor" aria-hidden="true">
+      <div class="ds-editor__bar"><i></i><i></i><i></i><em>query.sql</em></div>
+      <pre class="ds-code"><code>${code}</code></pre>
+    </div>
+    <div class="ds-result" aria-hidden="true">
+      <div class="ds-result__head">Result · ${d.sample.rows.length} rows</div>
+      <table>
+        <thead>${thead}</thead>
+        <tbody>${tbody}</tbody>
+      </table>
+    </div>`
+  );
+
+  // Popup inner card
+  mount(
+    '[data-render="ds-popup"]',
+    `
+    <button class="ds-popup__close" data-ds-close aria-label="Close">${icons.close}</button>
+    <div class="ds-popup__top">
+      <span class="ds-pill">${d.pill}</span>
+      <div class="ds-popup__brand">
+        <span class="ds-popup__icon">${icons.database}</span>
+        <div><h3 id="ds-popup-title">${d.name}</h3><p>${d.tagline} by OranjeStride</p></div>
+      </div>
+    </div>
+    <div class="ds-popup__body">
+      <p class="ds-popup__desc">${d.description}</p>
+      <div class="ds-feature-grid">${dsFeatures()}</div>
+      <div class="ds-popup__actions">
+        <a class="btn btn--primary" href="${d.url}" target="_blank" rel="noopener">Explore DataStride →</a>
+        <button class="ds-popup__dismiss" data-ds-close type="button">Maybe Later</button>
+      </div>
+    </div>`
+  );
 }
 
 /* ---------- Testimonials slider ---------- */
@@ -159,5 +242,6 @@ export function renderAll() {
   renderExpertise();
   renderClients();
   renderProgrammes();
+  renderDataStride();
   renderTestimonials();
 }

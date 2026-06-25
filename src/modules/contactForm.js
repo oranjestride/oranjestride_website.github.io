@@ -54,14 +54,39 @@ export function initContactForm() {
     const original = submitBtn.textContent;
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending…';
-    await new Promise((r) => setTimeout(r, 900)); // simulate network
+
+    const action = form.getAttribute('action');
+    let ok = true;
+    try {
+      if (action) {
+        const res = await fetch(action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        ok = res.ok;
+      } else {
+        await new Promise((r) => setTimeout(r, 700)); // no endpoint: simulate
+      }
+    } catch {
+      ok = false;
+    }
+
     submitBtn.disabled = false;
     submitBtn.textContent = original;
 
-    if (success) success.hidden = false;
-    form.querySelectorAll('input, textarea').forEach((el) => {
-      el.value = '';
-      el.setAttribute('aria-invalid', 'false');
-    });
+    if (!success) return;
+    success.hidden = false;
+    if (ok) {
+      success.classList.remove('is-error');
+      success.textContent = 'Thank you — your enquiry is on its way. We’ll be in touch shortly.';
+      form.querySelectorAll('input, textarea, select').forEach((el) => {
+        el.value = '';
+        el.setAttribute('aria-invalid', 'false');
+      });
+    } else {
+      success.classList.add('is-error');
+      success.textContent = 'Something went wrong. Please email us at contactus@oranjestride.com.';
+    }
   });
 }

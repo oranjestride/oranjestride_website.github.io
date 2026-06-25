@@ -20,6 +20,8 @@ import { initMarquee } from './modules/marquee.js';
 import { initTestimonials } from './modules/testimonials.js';
 import { initClientGallery } from './modules/clientGallery.js';
 import { initContactForm } from './modules/contactForm.js';
+import { initProgrammeTabs } from './modules/programmeTabs.js';
+import { initDataStride } from './modules/dataStride.js';
 import { init3D } from './modules/threeLoader.js';
 
 function boot() {
@@ -43,6 +45,8 @@ function boot() {
     initTestimonials(reduced);
     initClientGallery();
     initContactForm();
+    initProgrammeTabs();
+    initDataStride();
   } catch (err) {
     // Never let a motion glitch hide the page: reveal everything.
     console.error('[OranjeStride] init error:', err);

@@ -44,7 +44,7 @@
         "@type": "Organization",
         "name": "OranjeStride",
         "url": "https://www.oranjestride.com/",
-        "email": "content@oranjestride.com",
+        "email": "contactus@oranjestride.com",
         "description": "India's premier Gen AI & Data Science training and consulting practice.",
         "logo": "https://www.oranjestride.com/images/no_background_logo.webp",
         "slogan": "From data to decisions. From decisions to outcomes."
@@ -81,6 +81,10 @@
           <a href="#expertise">Expertise</a>
           <a href="#clients">Clients</a>
           <a href="#programmes">Programmes</a>
+          <a href="#datastride" class="nav__ds">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg>
+            DataStride
+          </a>
           <a href="#india-tour">India Tour</a>
           <a href="#consulting">Consulting</a>
         </nav>
@@ -105,6 +109,7 @@
           <a href="#expertise" data-drawer-close>Expertise</a>
           <a href="#clients" data-drawer-close>Clients</a>
           <a href="#programmes" data-drawer-close>Programmes</a>
+          <a href="#datastride" class="drawer__ds" data-drawer-close>DataStride</a>
           <a href="#india-tour" data-drawer-close>India Tour</a>
           <a href="#consulting" data-drawer-close>Consulting</a>
         </nav>
@@ -278,9 +283,31 @@
           <header class="section__head">
             <p class="eyebrow" data-reveal>Programmes</p>
             <h2 class="section__title" data-reveal>Our Training Streams</h2>
-            <p class="section__intro" data-reveal>Three routes to capability — each tailored to who is in the room and what they need to ship.</p>
+            <p class="section__intro" data-reveal>Two streams, one goal — turning knowledge into real capability, delivered by people who’ve done the work, not just taught it.</p>
           </header>
-          <div class="prog-grid" data-render="programmes"></div>
+          <div class="prog-tabs" data-render="prog-tabs" role="tablist" aria-label="Training streams"></div>
+          <div data-render="prog-panels"></div>
+        </div>
+      </section>
+
+      <!-- ============ 8b · DATASTRIDE (PRODUCT) ============ -->
+      <section class="section datastride" id="datastride">
+        <div class="container datastride__grid">
+          <div class="datastride__copy">
+            <p class="eyebrow" data-reveal>Our Product</p>
+            <h2 class="section__title" data-reveal><span class="accent-o">Data</span>Stride</h2>
+            <p class="datastride__lead" data-reveal>Interactive SQL Learning Platform — built by OranjeStride.</p>
+            <p class="datastride__desc" data-reveal>
+              Master SQL from the ground up in a fully browser-based, hands-on environment — no installation,
+              no setup. Write live queries, solve business-scenario challenges, and progress from SELECT basics
+              to advanced window functions and joins.
+            </p>
+            <div class="ds-feature-grid" data-render="ds-features" data-reveal></div>
+            <div class="hero__actions" data-reveal>
+              <a class="btn btn--primary" href="https://data-stride.vercel.app/" target="_blank" rel="noopener">Explore DataStride →</a>
+            </div>
+          </div>
+          <div class="datastride__visual" data-render="ds-mock" data-reveal></div>
         </div>
       </section>
 
@@ -301,6 +328,21 @@
               <li class="india-feat"><img src="/images/cultural_immersion.webp" alt="" width="48" height="48" /><div><h3>Cultural Immersion</h3><p>Learn inside India's living innovation ecosystem.</p></div></li>
               <li class="india-feat"><img src="/images/university_certificate.webp" alt="" width="48" height="48" /><div><h3>Co-Signed Certificate</h3><p>Credential co-signed by OranjeStride and a university of repute in India.</p></div></li>
             </ul>
+            <div class="india__panel" data-reveal>
+              <div class="india__panel-col">
+                <span class="india__panel-label">Who This Is For</span>
+                <div class="india__tags" role="list">
+                  <span>Nepal</span><span>Southeast Asia</span><span>East Africa</span><span>Middle East</span>
+                  <span>Banking &amp; Finance</span><span>Government</span><span>Corporate Teams</span><span>University Faculty</span>
+                </div>
+              </div>
+              <div class="india__panel-col">
+                <span class="india__panel-label">Programme Duration</span>
+                <div class="india__tags" role="list">
+                  <span>2–3 Day Intensive</span><span>1 Week Deep-Dive</span><span>Custom Cohorts</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="india__visual" data-reveal>
@@ -344,6 +386,14 @@
               <p>Evidence pipelines and policy analytics for public institutions making high-stakes calls at scale.</p>
             </article>
           </div>
+          <div class="consult-metrics" data-reveal>
+            <span class="consult-metrics__label">Engagement Metrics</span>
+            <div class="consult-bars">
+              <div class="consult-bar"><div class="consult-bar__row"><span>Learner Satisfaction</span><strong>96%</strong></div><div class="consult-bar__track"><i style="width:96%"></i></div></div>
+              <div class="consult-bar"><div class="consult-bar__row"><span>Post-Training Skill Adoption</span><strong>90%</strong></div><div class="consult-bar__track"><i style="width:90%"></i></div></div>
+              <div class="consult-bar"><div class="consult-bar__row"><span>Average Cohort Completion</span><strong>85%</strong></div><div class="consult-bar__track"><i style="width:85%"></i></div></div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -354,16 +404,26 @@
             <p class="eyebrow" data-reveal>Get In Touch</p>
             <h2 class="section__title" data-reveal>Let's Build Outcomes Together</h2>
             <p data-reveal>
-              Tell us about your team, your data, and the decisions you're trying to make better.
-              We'll come back with a tailored path forward.
+              Whether you're an institution designing a curriculum, a company upskilling teams, or a fund
+              needing analytics depth — we'd love to hear from you.
             </p>
-            <a class="contact__mail" href="mailto:content@oranjestride.com" data-reveal>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-              content@oranjestride.com
-            </a>
+            <ul class="contact__details" role="list" data-reveal>
+              <li>
+                <span class="contact__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+                <div><small>Email</small><a href="mailto:contactus@oranjestride.com">contactus@oranjestride.com</a></div>
+              </li>
+              <li>
+                <span class="contact__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.29 6.29l1.41-1.41a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span>
+                <div><small>Phone</small><a href="tel:+919311790400">+91 93117 90400</a></div>
+              </li>
+              <li>
+                <span class="contact__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <div><small>Location</small><span>Safdarjung Enclave, New Delhi, India</span></div>
+              </li>
+            </ul>
           </div>
 
-          <form class="contact__form" data-contact-form novalidate data-reveal>
+          <form class="contact__form" data-contact-form action="https://formspree.io/f/mjgaovpl" method="POST" novalidate data-reveal>
             <div class="field">
               <label for="cf-name">Name <span class="req" aria-hidden="true">*</span></label>
               <input id="cf-name" name="name" type="text" autocomplete="name" required />
@@ -377,6 +437,19 @@
             <div class="field">
               <label for="cf-org">Organisation</label>
               <input id="cf-org" name="organisation" type="text" autocomplete="organization" />
+            </div>
+            <div class="field">
+              <label for="cf-type">Enquiry Type</label>
+              <select id="cf-type" name="enquiry">
+                <option value="">Select an option</option>
+                <option>Corporate AI / ML Training</option>
+                <option>University &amp; Campus Programme</option>
+                <option>C-Suite &amp; Leadership Workshop</option>
+                <option>India AI Learning Tour</option>
+                <option>Data &amp; Analytics Consulting</option>
+                <option>DataStride (SQL Platform)</option>
+                <option>Other</option>
+              </select>
             </div>
             <div class="field">
               <label for="cf-msg">Message <span class="req" aria-hidden="true">*</span></label>
@@ -415,7 +488,8 @@
 
         <div class="footer__contact">
           <h3>Connect</h3>
-          <a href="mailto:content@oranjestride.com">content@oranjestride.com</a>
+          <a href="mailto:contactus@oranjestride.com">contactus@oranjestride.com</a>
+          <a href="tel:+919311790400">+91 93117 90400</a>
           <ul class="footer__social" role="list" aria-label="Social links">
             <li><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21H17.5v-5.3c0-1.26-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21H9z"/></svg></a></li>
             <li><a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.2 2H21l-6.6 7.5L22 22h-6.8l-4.3-5.6L5.9 22H3l7-8L2.5 2h6.9l3.9 5.2L18.2 2zm-1.2 18h1.6L7.1 3.7H5.4z"/></svg></a></li>
@@ -424,10 +498,16 @@
         </div>
       </div>
       <div class="container container--wide footer__bottom">
-        <p>&copy; <span data-year>2026</span> OranjeStride. All rights reserved.</p>
+        <p>&copy; <span data-year>2026</span> OranjeStride Consultancy Pvt. Ltd. · Safdarjung Enclave, New Delhi</p>
         <p>Nothing Is Unattainable.</p>
       </div>
     </footer>
+
+    <!-- ============ DataStride promo popup ============ -->
+    <div class="ds-popup" data-ds-popup hidden>
+      <div class="ds-popup__backdrop" data-ds-backdrop data-ds-close></div>
+      <div class="ds-popup__card" role="dialog" aria-modal="true" aria-labelledby="ds-popup-title" data-render="ds-popup"></div>
+    </div>
 
     <!-- ============ Clients modal ============ -->
     <div class="modal" data-modal="clients" hidden>
